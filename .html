@@ -1,0 +1,72 @@
+<!-- Thanks to emily Fisher -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Card with Color Theme</title>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="https://dl.dropbox.com/s/k1cbrwfytw8n950/IMG_20210309_233816_992.jpg" >
+            <h4>Mr.Stark</h4>
+            <h5>front-end Developer</h5>
+            <div class="details">
+                <div class="column">
+                    <h2>67</h2>
+                    <span>Followers</span>
+                </div>
+                <div class="column">
+                    <h2>17</h2>
+                    <span>Following</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button>Follow</button>
+                <button>Message</button>
+            </div>
+        </div>
+        <div class="themes">
+            <!--button.btn.btn$*5-->
+            <button class="btn btn1"></button>
+            <button class="btn btn2"></button>
+            <button class="btn btn3"></button>
+            <button class="btn btn4"></button>
+            <button class="btn btn5"></button>
+        </div>
+        
+    </div>
+    <script>
+    
+const theme = document.querySelector(':root');
+const btns = document.querySelectorAll(".btn");
+
+btns.forEach(function (btn){
+    btn.addEventListener("click", function (e){
+
+        const color = e.currentTarget.classList;
+
+        if (color.contains("btn1")){
+            theme.style.setProperty('--theme-color', '#3498DB');
+        }
+        else if (color.contains("btn2")){
+            theme.style.setProperty('--theme-color', '#FF1756');
+        }
+        else if (color.contains("btn3")){
+            theme.style.setProperty('--theme-color', '#1CB65D');
+        }
+        else if (color.contains("btn4")){
+            theme.style.setProperty('--theme-color', '#8e44ad');
+        }
+        else{
+            theme.style.setProperty('--theme-color', '#F4B932');
+        }
+    });
+});
+      
+    </script>
+</body>
+</html>
